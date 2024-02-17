@@ -1,7 +1,7 @@
 import { Form, Field, ErrorMessage } from 'formik';
 import InputRounded from '~/components/cores/InputRounded';
 
-const LoginFormField = ({dirty, isValid}: any) => {
+const LoginFormField = ({statusLoginMutation, dirty, isValid}: any) => {
     return(
         <Form
             className='flex flex-col gap-5'
@@ -44,11 +44,16 @@ const LoginFormField = ({dirty, isValid}: any) => {
                 )}
             </Field>
             <button
-                disabled={!dirty || !isValid}
+                disabled={!dirty || !isValid || statusLoginMutation === 'pending'}
                 type='submit'
                 className={`btn rounded-md ${!dirty || !isValid? 'bg-gray-200' : 'bg-blue-400'} text-white py-2`}
             >
-                Login
+                {
+                    statusLoginMutation === 'pending'?
+                        'Loading...'
+                    :
+                        'Login'
+                }
             </button>
         </Form>
     )

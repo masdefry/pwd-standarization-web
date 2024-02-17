@@ -3,7 +3,7 @@
     import { Formik } from 'formik';
     import { IFormLogin } from './types';
     import { LoginFormSchema } from '~/schemas/LoginFormSchema';
-    import LoginFormField from '~/components/login/LoginFormField';
+    import LoginFormField from '~/components/auth/login/LoginFormField';
     import {useLoginMutation} from '~/features/auth/login/UseLoginMutation';
     import { toast, ToastContainer } from 'react-toastify';
     import "react-toastify/dist/ReactToastify.css";
@@ -11,17 +11,17 @@
     const LoginPage = () => {
         const { status: statusLoginMutation, mutate: loginMutation } = useLoginMutation({
             onSuccess: (response) => {
-                console.log(response)
                 toast.success(response.data.message, {
                     position: "top-left"
-                  });
+                });
             },
-
+            
             onError: (error) => {
                 console.log(error)
                 alert('Error')
             }
         })
+        console.log(statusLoginMutation)
 
         return(
             <div
@@ -55,6 +55,7 @@
                             const { dirty, isValid } = IFormikProps
                             return(
                                 <LoginFormField 
+                                    statusLoginMutation={statusLoginMutation}
                                     dirty={dirty}
                                     isValid={isValid}
                                 />
