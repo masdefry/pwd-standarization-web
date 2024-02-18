@@ -21,25 +21,26 @@
                 alert('Error')
             }
         })
-        console.log(statusLoginMutation)
 
         return(
             <div
                 className='px-10 py-10'
             >
                 <ToastContainer />
-                <h1
-                    className='text-2xl font-bold'
-                >
-                    Login Account 
-                </h1>
-                <p
-                    className='text-gray-400'
-                >
-                    Stay updated with our products
-                </p>
+                <div data-test='header-section'>
+                    <h1
+                        className='text-2xl font-bold'
+                    >
+                        Login Account 
+                    </h1>
+                    <p
+                        className='text-gray-400'
+                    >
+                        Stay updated with our products
+                    </p>
+                </div>
 
-                <div className='py-5 w-[300px]'>
+                <div data-test='main-section' className='py-5 w-[300px]'>
                     <Formik<IFormLogin>
                         initialValues={{
                             email: '',
