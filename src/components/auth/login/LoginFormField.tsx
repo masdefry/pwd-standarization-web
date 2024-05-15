@@ -1,5 +1,4 @@
 import { Form, Field, ErrorMessage } from 'formik';
-import InputRounded from '~/components/cores/InputRounded';
 
 const LoginFormField = ({statusLoginMutation, dirty, isValid}: any) => {
     return(
@@ -9,40 +8,29 @@ const LoginFormField = ({statusLoginMutation, dirty, isValid}: any) => {
             <Field
                 name='email'
                 type='text'
-            >
-                {({field}) => (
-                    <>
-                        <InputRounded 
-                            field={{...field}}
-                            placeholder='Type Your Email'
-                        />
-                        <ErrorMessage 
-                            component='div'
-                            name='email'
-                            className='text-red-600'
-                        />
-                    </>
-                )}
-            </Field>
-            
+                placeholder='Type Your Email'
+                className='
+                    input border border-blue-400 rounded px-1 py-1 w-full focus:outline-blue-400
+                '
+            />
+            <ErrorMessage 
+                component='div'
+                name='email'
+                className='text-red-600'
+            />
             <Field
                 name='password'
                 type='text'
-            >
-                {({field}) => (
-                    <>
-                        <InputRounded 
-                            field={{...field}}
-                            placeholder='Type Your Password'
-                        />
-                        <ErrorMessage 
-                            component='div'
-                            name='password'
-                            className='text-red-600'
-                        />
-                    </>
-                )}
-            </Field>
+                placeholder='Type Your Password'
+                className='
+                    input border border-blue-400 rounded px-1 py-1 w-full focus:outline-blue-400
+                '
+            />
+            <ErrorMessage 
+                component='div'
+                name='password'
+                className='text-red-600'
+            />
             <button
                 disabled={!dirty || !isValid || statusLoginMutation === 'pending'}
                 type='submit'

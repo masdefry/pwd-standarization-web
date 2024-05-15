@@ -1,12 +1,16 @@
 'use client';
 
-import AddressList from "~/components/users/address/AddressList";   
-import { useFetchAddressQuery } from "~/features/users/address/UseFetchAddressQuery";
+import AddressList from '~/components/users/address/AddressList'; 
+import { useFetchAddress } from '~/features/users/address/hooks/useFetchAddress'; 
+import { IUserAddress } from '../../../features/users/address/types'; 
 
 const AddressPage = () => {
-    const { data: addressesData, status } = useFetchAddressQuery()
-    
-    if(!addressesData) return <div>Loading</div>
+    const {
+        userAddress, 
+        statusFetchAddress
+    } = useFetchAddress()
+    console.log(userAddress)
+    if(!userAddress) return <div>Loading</div>
 
     return(
         <div className='p-5'>
@@ -14,13 +18,13 @@ const AddressPage = () => {
                 My Address
             </h1>
             {
-                addressesData.map(item => {
+                userAddress.map((address: IUserAddress, index: number) => {
                     return(
                         <AddressList 
-                            id={item.id}
-                            receiver={item.receiver}
-                            phoneNumber={item.phoneNumber}
-                            address={item.address}
+                            id={address.id}
+                            receiver={address.receiver}
+                            phoneNumber={address.phoneNumber}
+                            address={address.address}
                         />
                     )
                 })

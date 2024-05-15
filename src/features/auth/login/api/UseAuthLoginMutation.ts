@@ -1,9 +1,9 @@
 import { axiosInstance } from '~/utils/AxiosInstance';
 import {useMutation} from '@tanstack/react-query';
-import { IFormLogin } from '~/app/auth/login/types';
+import { IFormLogin } from '~/features/auth/login/types';
 import { IMutationProps } from '~/features/types';
 
-export const useLoginMutation = ({onSuccess, onError}: IMutationProps) => {
+export const useAuthLoginMutation = ({onSuccess, onError}: IMutationProps) => {
     const {status, mutate, data} = useMutation({
         mutationFn: async({ email, password }: IFormLogin) => {
             try {
