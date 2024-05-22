@@ -2,7 +2,7 @@
 
     import { Formik, FormikProps } from 'formik';
     import { IFormLogin } from '../../../features/auth/login/types';
-    import { LoginFormSchema } from '~/schemas/LoginFormSchema';
+    import { LoginFormSchema } from '~/features/auth/login/schemas/LoginFormSchema';
     import LoginFormField from '~/components/auth/login/LoginFormField';
     import { useAuthLogin } from '~/features/auth/login/hooks/useAuthLogin';
     import { ToastContainer } from 'react-toastify';
@@ -22,14 +22,14 @@
                 <ToastContainer />
                 <div data-test='header-section'>
                     <h1
-                        className='text-2xl font-bold'
+                        className='text-2xl font-bold text-blue-800'
                     >
-                        Login Account 
+                        Login 
                     </h1>
                     <p
                         className='text-gray-400'
                     >
-                        Stay updated with our products
+                        Stay update with our new products
                     </p>
                 </div>
 

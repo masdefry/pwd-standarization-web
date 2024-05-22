@@ -10,7 +10,7 @@ export const mockAddressesData = ({
   }: {
     numberOfAddresses: number;
   }): TAddresses[] => {
-    const laundryItems: any[] = new Array( numberOfAddresses = 10)
+    const addressess: any[] = new Array( numberOfAddresses = 10)
       .fill(null)
       .map((_, index) => {
         const addressItemId = index + 1;
@@ -23,5 +23,5 @@ export const mockAddressesData = ({
         };
       });
   
-    return laundryItems;
+    return addressess;
   };

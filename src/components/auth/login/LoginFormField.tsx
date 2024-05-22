@@ -10,7 +10,7 @@ const LoginFormField = ({statusLoginMutation, dirty, isValid}: any) => {
                 type='text'
                 placeholder='Type Your Email'
                 className='
-                    input border border-blue-400 rounded px-1 py-1 w-full focus:outline-blue-400
+                    input border border-blue-400 rounded px-3 py-1 w-full focus:outline-blue-400
                 '
             />
             <ErrorMessage 
@@ -23,7 +23,7 @@ const LoginFormField = ({statusLoginMutation, dirty, isValid}: any) => {
                 type='text'
                 placeholder='Type Your Password'
                 className='
-                    input border border-blue-400 rounded px-1 py-1 w-full focus:outline-blue-400
+                    input border border-blue-400 rounded px-3 py-1 w-full focus:outline-blue-400
                 '
             />
             <ErrorMessage 
