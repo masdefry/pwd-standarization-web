@@ -6,7 +6,7 @@ export const useFetchAddressQuery = () => {
         queryFn: async() => {
           const response = await axiosInstance.get('/user/address')
             
-          return response.data.data.addresses
+          return response.data.data.address
         },
         queryKey: ['fetchAddressQuery'],
         

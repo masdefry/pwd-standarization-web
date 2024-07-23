@@ -1,4 +1,4 @@
-import {useAuthLoginMutation} from '~/features/auth/login/api/UseAuthLoginMutation';
+import {useAuthLoginMutation} from '~/features/auth/login/api/useAuthLoginMutation';
 import { toast } from 'react-toastify';
 
 export const useAuthLogin = () => {
